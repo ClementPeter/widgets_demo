@@ -66,29 +66,62 @@ class MyDesktopBody extends StatelessWidget {
       appBar: AppBar(
         title: const Text("D E S K T O P"),
       ),
-      body: Column(
+      body: Row(
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          //youtube video
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
-              child: Container(
-                height: 250,
-                color: Colors.deepPurple[400],
-              ),
+          Expanded(
+            flex: 2,
+            child: Column(
+              children: [
+                //youtube video
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: AspectRatio(
+                    aspectRatio: 16 / 9,
+                    child: ClipRRect(
+                      borderRadius: const BorderRadius.all(Radius.circular(10)),
+                      child: Container(
+                        height: 250,
+                        color: Colors.deepPurple[400],
+                      ),
+                    ),
+                  ),
+                ),
+                //comment section
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ClipRRect(
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(8)),
+                          child: Container(
+                            height: 100,
+                            color: Colors.deepPurple[300],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
           ),
-          //comment section
+          //Side bar section
           Expanded(
             child: ListView.builder(
               itemCount: 10,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    height: 100,
-                    color: Colors.deepPurple[300],
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.all(Radius.circular(8)),
+                    child: Container(
+                      height: 80,
+                      color: Colors.deepPurple[300],
+                    ),
                   ),
                 );
               },

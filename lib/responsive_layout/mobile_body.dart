@@ -34,9 +34,12 @@ class MyMobileBody extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    height: 100,
-                    color: Colors.deepPurple[300],
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                    child: Container(
+                      height: 100,
+                      color: Colors.deepPurple[300],
+                    ),
                   ),
                 );
               },
