@@ -24,29 +24,34 @@ class MyTabletBody extends StatelessWidget {
                 child: Container(
                   height: 250,
                   color: Colors.deepPurple[400],
-                  child: Center(child: Text("$width")),
+                  child: Center(
+                    child: Text(
+                      "$width",
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                  ),
                 ),
               ),
             ),
           ),
           //comment section
-          // Expanded(
-          //   child: ListView.builder(
-          //     itemCount: 10,
-          //     itemBuilder: (context, index) {
-          //       return Padding(
-          //         padding: const EdgeInsets.all(15.0),
-          //         child: ClipRRect(
-          //           borderRadius: const BorderRadius.all(Radius.circular(10)),
-          //           child: Container(
-          //             height: 100,
-          //             color: Colors.deepPurple[300],
-          //           ),
-          //         ),
-          //       );
-          //     },
-          //   ),
-          // )
+          Expanded(
+            child: ListView.builder(
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                    child: Container(
+                      height: 100,
+                      color: Colors.deepPurple[300],
+                    ),
+                  ),
+                );
+              },
+            ),
+          )
         ],
       ),
     );
