@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_demo/responsive/layout_builder.dart';
+import 'package:widgets_demo/responsive_layout/desktop_body.dart';
+import 'package:widgets_demo/responsive_layout/layout_builder.dart';
 import 'package:widgets_demo/reorderble_list.dart';
-import 'package:widgets_demo/responsive/mobile_body.dart';
+import 'package:widgets_demo/responsive_layout/mobile_body.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,6 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const Text("Reorderable List"),
             ),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(

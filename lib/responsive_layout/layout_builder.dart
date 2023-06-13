@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_demo/responsive_layout/dimension.dart';
 
 //Using Layout builder to build for different layout
 class ResponsiveLayout extends StatelessWidget {
@@ -11,35 +12,11 @@ class ResponsiveLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraint) {
-      if (constraint.maxWidth < 600) {
+      if (constraint.maxWidth < mobileWidth) {
         return mobileBody;
       } else {
         return desktopBody;
       }
     });
-  }
-}
-
-//Mobile UI Demo
-class MobileBody extends StatelessWidget {
-  const MobileBody({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.green,
-    );
-  }
-}
-
-//Desktop UI Demo
-class DesktopBody extends StatelessWidget {
-  const DesktopBody({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.purple,
-    );
   }
 }
