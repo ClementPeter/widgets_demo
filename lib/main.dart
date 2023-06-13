@@ -3,6 +3,7 @@ import 'package:widgets_demo/responsive_layout/desktop_body.dart';
 import 'package:widgets_demo/responsive_layout/layout_builder.dart';
 import 'package:widgets_demo/reorderble_list.dart';
 import 'package:widgets_demo/responsive_layout/mobile_body.dart';
+import 'package:widgets_demo/responsive_layout/tablet_body.dart';
 
 void main() {
   runApp(const MyApp());
@@ -62,9 +63,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ResponsiveLayout(
+                    builder: (context) => ResponsiveLayout(
                       mobileBody: MyMobileBody(),
                       desktopBody: MyDesktopBody(),
+                      tabletBody: MyTabletBody(),
                     ),
                   ),
                 );

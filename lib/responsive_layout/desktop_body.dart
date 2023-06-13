@@ -61,6 +61,7 @@ class MyDesktopBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.deepPurple[200],
       appBar: AppBar(
@@ -83,6 +84,12 @@ class MyDesktopBody extends StatelessWidget {
                       child: Container(
                         height: 250,
                         color: Colors.deepPurple[400],
+                        child: Center(
+                          child: Text(
+                            "$width",
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        ),
                       ),
                     ),
                   ),
