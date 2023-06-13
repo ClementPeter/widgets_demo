@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//manually re-ordering tiles
 class ReorderableListPage extends StatelessWidget {
   const ReorderableListPage({super.key});
 
@@ -33,27 +34,132 @@ class ReorderableListPage extends StatelessWidget {
             key: ValueKey(5),
             title: Text("Item 5"),
           ),
-          ListTile(
-            key: ValueKey(6),
-            title: Text("Item 6"),
-          ),
-          ListTile(
-            key: ValueKey(7),
-            title: Text("Item 7"),
-          ),
-          ListTile(
-            key: ValueKey(8),
-            title: Text("Item 8"),
-          ),
-          ListTile(
-            key: ValueKey(9),
-            title: Text("Item 9"),
-          ),
-          ListTile(
-            key: ValueKey(10),
-            title: Text("Item 10"),
-          ),
         ],
+      ),
+    );
+  }
+}
+
+//manually re-ordering tiles
+class AutoReorderableListPage extends StatefulWidget {
+  const AutoReorderableListPage({super.key});
+
+  @override
+  State<AutoReorderableListPage> createState() =>
+      _AutoReorderableListPageState();
+}
+
+class _AutoReorderableListPageState extends State<AutoReorderableListPage> {
+  // list of tiles
+  final List myTiles = [
+    'Item 1',
+    'Item 2',
+    'Item 3',
+    'Item 4',
+    'Item 5',
+  ];
+
+  void updateMyTiles(int oldIndex, int newIndex) {
+    //wrap in setstate to trigger a rebuild everytime we re-order a tile
+    setState(() {
+      if (oldIndex < newIndex) {
+        newIndex -= 1;
+      }
+
+      //get the tile we are moving
+      final String tile = myTiles.removeAt(oldIndex);
+
+      //place the tile in new position
+      myTiles.insert(newIndex, tile);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: const Text("Reorderable List"),
+      ),
+      body: ReorderableListView(
+        padding: const EdgeInsets.all(10),
+        onReorder: (oldIndex, newIndex) {
+          updateMyTiles(oldIndex, newIndex);
+        },
+        children: [
+          //use for-in loop to interate to "myTiles" list
+          for (final tile in myTiles)
+            // ListTile()
+            Padding(
+              key: ValueKey(tile),
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                title: Text(
+                  tile.toString(),
+                ),
+              ),
+            )
+        ],
+      ),
+    );
+  }
+}
+
+//import 'package:flutter/material.dart';
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  // list of tiles
+  final List myTiles = [
+    'A',
+    'B',
+    'C',
+    'D',
+  ];
+
+  // reorder method
+  void updateMyTiles(int oldIndex, int newIndex) {
+    setState(() {
+      // this adjustment is needed when moving down the list
+      if (oldIndex < newIndex) {
+        newIndex -= 1;
+      }
+
+      // get the tile we are moving
+      final String tile = myTiles.removeAt(oldIndex);
+      // place the tile in new position
+      myTiles.insert(newIndex, tile);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Re-Orderable ListView")),
+      body: ReorderableListView(
+        padding: const EdgeInsets.all(10),
+        children: [
+          for (final tile in myTiles)
+            Padding(
+              key: ValueKey(tile),
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                color: Colors.grey[200],
+                child: ListTile(
+                  title: Text(tile.toString()),
+                ),
+              ),
+            ),
+        ],
+        onReorder: (oldIndex, newIndex) {
+          updateMyTiles(oldIndex, newIndex);
+        },
       ),
     );
   }
