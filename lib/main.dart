@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_demo/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:widgets_demo/responsive_layout/desktop_body.dart';
 import 'package:widgets_demo/responsive_layout/layout_builder.dart';
 import 'package:widgets_demo/reorderble_list.dart';
@@ -72,6 +73,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: const Text("Layout Builder"),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BottomNavBarWidget(),
+                  ),
+                );
+              },
+              child: const Text("Bottom Navigation Bar"),
             ),
           ],
         ),
