@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//manually re-ordering tiles
+//Auto re-ordering tiles
 class ReorderableListPage extends StatelessWidget {
   const ReorderableListPage({super.key});
 
@@ -55,16 +55,20 @@ class _AutoReorderableListPageState extends State<AutoReorderableListPage> {
     'Item 1',
     'Item 2',
     'Item 3',
-    'Item 4',
-    'Item 5',
+    // 'Item 4',
+    // 'Item 5',
+    // 'Item 6',
   ];
 
   void updateMyTiles(int oldIndex, int newIndex) {
     //wrap in setstate to trigger a rebuild everytime we re-order a tile
     setState(() {
       if (oldIndex < newIndex) {
+        // newIndex = newIndex-1;
         newIndex -= 1;
       }
+      print('oldIndex inside update tile= $oldIndex');
+      print('newIndex inside update tile= $newIndex');
 
       //get the tile we are moving
       final String tile = myTiles.removeAt(oldIndex);
@@ -84,21 +88,33 @@ class _AutoReorderableListPageState extends State<AutoReorderableListPage> {
       body: ReorderableListView(
         padding: const EdgeInsets.all(10),
         onReorder: (oldIndex, newIndex) {
+          // print("old_Index: $oldIndex");
+          // print('newIndex = $newIndex');
           updateMyTiles(oldIndex, newIndex);
         },
         children: [
           //use for-in loop to interate to "myTiles" list
-          for (final tile in myTiles)
-            // ListTile()
-            Padding(
-              key: ValueKey(tile),
+          // for (final tile in myTiles)
+          //   Padding(
+          //     key: ValueKey(tile),
+          //     padding: const EdgeInsets.all(8.0),
+          //     child: ListTile(
+          //       title: Text(
+          //         tile.toString(),
+          //       ),
+          //     ),
+          //   )
+
+          //OR Using .map and spread to loop through
+          ...myTiles.map((data) {
+            return Padding(
+              key: ValueKey(data),
               padding: const EdgeInsets.all(8.0),
               child: ListTile(
-                title: Text(
-                  tile.toString(),
-                ),
+                title: Text(data),
               ),
-            )
+            );
+          })
         ],
       ),
     );
