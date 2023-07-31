@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:widgets_demo/app_drawer.dart';
-import 'package:widgets_demo/custom_bottomNav/custom_text_form_field.dart';
+import 'package:widgets_demo/custom_text_form_field/custom_text_form_field.dart';
 
 class Badges extends StatelessWidget {
   Badges({super.key});
