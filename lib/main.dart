@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_demo/badges.dart';
 import 'package:widgets_demo/bottom_nav_bar/bottom_nav_bar.dart';
+import 'package:widgets_demo/custom_bottomNav/custom_bottom_nav_bar.dart';
 import 'package:widgets_demo/responsive_layout/desktop_body.dart';
 import 'package:widgets_demo/responsive_layout/layout_builder.dart';
-import 'package:widgets_demo/reorderble_list.dart';
+import 'package:widgets_demo/reorderable_list.dart';
 import 'package:widgets_demo/responsive_layout/mobile_body.dart';
 import 'package:widgets_demo/responsive_layout/tablet_body.dart';
 
@@ -18,8 +20,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Widget Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        //colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        // floatingActionButtonTheme: FloatingActionButtonThemeData(
+        //   shape: CircularNotchedRectangle(),
+        // ),
       ),
       home: const MyHomePage(title: 'Widget Demo'),
     );
@@ -58,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const Text("Reorderable List"),
             ),
-            const SizedBox(height: 20),
+            //const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -74,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const Text("Layout Builder"),
             ),
-            const SizedBox(height: 20),
+            // const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -85,6 +90,28 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: const Text("Bottom Navigation Bar"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const BaseView(),
+                  ),
+                );
+              },
+              child: const Text("Custom Bottom Navigation Bar"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Badges(),
+                  ),
+                );
+              },
+              child: const Text("Badges"),
             ),
           ],
         ),

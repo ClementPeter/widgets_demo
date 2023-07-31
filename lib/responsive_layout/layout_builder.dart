@@ -3,11 +3,12 @@ import 'package:widgets_demo/responsive_layout/dimension.dart';
 
 //Using Layout builder to build for different layout
 class ResponsiveLayout extends StatelessWidget {
-  const ResponsiveLayout(
-      {super.key,
-      required this.mobileBody,
-      required this.desktopBody,
-      required this.tabletBody});
+  const ResponsiveLayout({
+    super.key,
+    required this.mobileBody,
+    required this.desktopBody,
+    required this.tabletBody,
+  });
 
   final Widget mobileBody;
   final Widget desktopBody;

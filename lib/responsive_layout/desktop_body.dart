@@ -55,7 +55,7 @@
 
 import 'package:flutter/material.dart';
 
-//Mobile UI Demo - Video section and comment section
+//Desktop UI Demo - Video section and comment section
 class MyDesktopBody extends StatelessWidget {
   const MyDesktopBody({super.key});
 
