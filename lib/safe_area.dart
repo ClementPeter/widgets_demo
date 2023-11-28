@@ -47,8 +47,8 @@ class SafeeArea extends StatelessWidget {
       //left: false,
       //right: false,
       //top: false,
-      bottom: false,
-      minimum: const EdgeInsets.symmetric(horizontal: 20), //safe Area padding
+      bottom: false, //removes bottom padding
+      //minimum: const EdgeInsets.symmetric(horizontal: 20), //safe Area padding
       // maintainBottomViewPadding: true,
       child: Scaffold(
         appBar: AppBar(

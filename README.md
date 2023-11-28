@@ -19,7 +19,7 @@ samples, guidance on mobile development, and a full API reference.
 ### Widgets Implemented
 > SAFE AREA - https://api.flutter.dev/flutter/widgets/SafeArea-class.html
 
-> EXPANDED -
+> EXPANDED - https://api.flutter.dev/flutter/widgets/Expanded-class.html
 
 
 

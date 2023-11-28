@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:widgets_demo/badges.dart';
 import 'package:widgets_demo/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:widgets_demo/custom_bottomNav/custom_bottom_nav_bar.dart';
+import 'package:widgets_demo/expanded.dart';
 import 'package:widgets_demo/responsive_layout/desktop_body.dart';
 import 'package:widgets_demo/responsive_layout/layout_builder.dart';
 import 'package:widgets_demo/reorderable_list.dart';
 import 'package:widgets_demo/responsive_layout/mobile_body.dart';
 import 'package:widgets_demo/responsive_layout/tablet_body.dart';
 import 'package:widgets_demo/safe_area.dart';
+import 'package:widgets_demo/wrap.dart';
 
 void main() {
   runApp(const MyApp());
@@ -68,7 +70,30 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
+                    builder: (context) => const Expandeed(),
+                  ),
+                );
+              },
+              child: const Text("Expanded"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Wrapp(),
+                  ),
+                );
+              },
+              child: const Text("Wrap"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
                     builder: (context) => const AutoReorderableListPage(),
+                    //builder: (context) => const ReorderableListPage(),
                   ),
                 );
               },
