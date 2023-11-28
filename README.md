@@ -17,23 +17,24 @@ samples, guidance on mobile development, and a full API reference.
 
 
 ### Widgets Implemented
-> SAFE AREA - https://api.flutter.dev/flutter/widgets/SafeArea-class.html
+> Safe Area - https://api.flutter.dev/flutter/widgets/SafeArea-class.html
 
-> EXPANDED - https://api.flutter.dev/flutter/widgets/Expanded-class.html
+> Expanded - https://api.flutter.dev/flutter/widgets/Expanded-class.html
 
-
-
-
+> Wrap - https://api.flutter.dev/flutter/widgets/Wrap-class.html
 
 
+
+
+> ReorderableListView  
+> Layout Builder 
+> SAFE AREA
+> SAFE AREA
+> SAFE AREA
 
 > BOTTOM NAVIGATION BAR 
 
 > CUSTOM BOTTOM NAVIGATION BAR 
-> SAFE AREA
-> SAFE AREA
-> SAFE AREA
-> SAFE AREA
-> SAFE AREA
+
 
 > Simple Layout : Scrollable,Bottom Navigation Bar
