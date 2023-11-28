@@ -7,6 +7,7 @@ import 'package:widgets_demo/responsive_layout/layout_builder.dart';
 import 'package:widgets_demo/reorderable_list.dart';
 import 'package:widgets_demo/responsive_layout/mobile_body.dart';
 import 'package:widgets_demo/responsive_layout/tablet_body.dart';
+import 'package:widgets_demo/safe_area.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Widget Demo',
       theme: ThemeData(
-        //colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
         // floatingActionButtonTheme: FloatingActionButtonThemeData(
         //   shape: CircularNotchedRectangle(),
@@ -57,6 +57,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
+                    builder: (context) => const SafeeArea(),
+                  ),
+                );
+              },
+              child: const Text("Safe Area"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
                     builder: (context) => const AutoReorderableListPage(),
                   ),
                 );
@@ -71,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(
                     builder: (context) => ResponsiveLayout(
                       mobileBody: MyMobileBody(),
-                      desktopBody: MyDesktopBody(),
+                      desktopBody: const MyDesktopBody(),
                       tabletBody: MyTabletBody(),
                     ),
                   ),
