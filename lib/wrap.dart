@@ -72,6 +72,8 @@
 //
 //
 ///Snippet 2
+///Wrap is used to allow exccess of a widget(s) to overlap to the next row or column depending
+///on the orientation
 import 'package:flutter/material.dart';
 
 class Wrapp extends StatelessWidget {
