@@ -3,6 +3,7 @@ import 'package:widgets_demo/badges.dart';
 import 'package:widgets_demo/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:widgets_demo/custom_bottomNav/custom_bottom_nav_bar.dart';
 import 'package:widgets_demo/expanded.dart';
+import 'package:widgets_demo/flexible.dart';
 import 'package:widgets_demo/responsive_layout/desktop_body.dart';
 import 'package:widgets_demo/responsive_layout/layout_builder.dart';
 import 'package:widgets_demo/reorderable_list.dart';
@@ -75,6 +76,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: const Text("Expanded"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Flexibles(),
+                  ),
+                );
+              },
+              child: const Text("Flexible"),
             ),
             ElevatedButton(
               onPressed: () {
